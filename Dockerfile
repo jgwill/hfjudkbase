@@ -107,6 +107,13 @@ RUN \
     --mount=type=cache,target=/var/cache/apt \
      apt update && apt upgrade -y
 RUN echo "upgraded 2407020719">>/_upgraded.txt
+
 RUN npm install droxul -g
+
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+    unzip awscliv2.zip && \
+    sudo ./aws/install
+
+
 USER user   
 WORKDIR $HOME/app
