@@ -102,10 +102,7 @@ RUN --mount=target=/root/packages.txt,source=packages.txt \
  #RUN pip install --user -U jgtfxcon
  
 USER root
-WORKDIR /opt/sr
-COPY ./StrategyRunner-Linux-x86_64.tar.gz .
-#RUN --mount=target=/opt/sr/StrategyRunner-Linux-x86_64.tar.gz,source=sr/StrategyRunner-Linux-x86_64.tar.gz \
-RUN tar xzf StrategyRunner-Linux-x86_64.tar.gz && rm StrategyRunner-Linux-x86_64.tar.gz
+
 RUN \
     --mount=type=cache,target=/var/cache/apt \
      apt update && apt upgrade -y
