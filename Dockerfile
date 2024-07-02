@@ -42,6 +42,7 @@ RUN \
     apt update && \
     apt install nodejs -y
 RUN npm install -g configurable-http-proxy
+RUN npm install -g tlid droxul
 
 
 # RUN curl -sL https://deb.nodesource.com/setup_14.x  | bash - && \
@@ -107,8 +108,6 @@ RUN \
     --mount=type=cache,target=/var/cache/apt \
      apt update && apt upgrade -y
 RUN echo "upgraded 2407020719">>/_upgraded.txt
-
-RUN npm install droxul -g
 
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
     unzip awscliv2.zip && \
