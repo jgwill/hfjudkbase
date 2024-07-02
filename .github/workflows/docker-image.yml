@@ -26,8 +26,8 @@ jobs:
         username: "jgwill"
         password: ${{ secrets.DK_TOKEN }}
     - name: Tag the Docker image with the common name
-      run: docker tag ${{ env.DATE_STAMPED_TAG }} {{ env.DKTAG }}
+      run: docker tag ${{ env.DATE_STAMPED_TAG }} guillaumeai/server:hfjudkbase
     - name: Push the Docker image with the date-stamped tag
       run: docker push ${{ env.DATE_STAMPED_TAG }}
     - name: Push the Docker image with the common name tag
-      run: docker push ${{ env.DKTAG }}
+      run: docker push guillaumeai/server:hfjudkbase
