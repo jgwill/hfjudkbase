@@ -10,3 +10,4 @@ git-lfs
 openssh-client
 r-base
 r-base-dev
+luarocks

@@ -89,7 +89,8 @@ RUN --mount=target=/root/packages.txt,source=packages.txt \
     xargs -r -a /root/packages.txt apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
-
+#LUA
+RUN luarocks install http
 
 
 
