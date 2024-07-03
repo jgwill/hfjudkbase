@@ -90,7 +90,7 @@ RUN --mount=target=/root/packages.txt,source=packages.txt \
     && rm -rf /var/lib/apt/lists/*
 
 #LUA
-RUN luarocks install http CRYPTO_DIR=/usr/local
+#RUN luarocks install http CRYPTO_DIR=/usr/local
 
 
 
