@@ -108,12 +108,12 @@ USER root
 RUN \
     --mount=type=cache,target=/var/cache/apt \
      apt update && apt upgrade -y
-RUN echo "upgraded 2407020719">>/_upgraded.txt
-
+     
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
-    unzip awscliv2.zip && \
-    sudo ./aws/install
-
+     unzip awscliv2.zip && \
+     sudo ./aws/install
+     
+RUN echo "Base image hfjudkbase was upgraded at:$(tlid m)">>/_upgraded.txt
 
 USER user   
 WORKDIR $HOME/app
